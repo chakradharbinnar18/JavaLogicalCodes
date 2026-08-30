@@ -1,0 +1,27 @@
+package com.Java8;
+
+import java.security.cert.PKIXRevocationChecker.Option;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class EmpAverageSalaryOfEachDepartment {
+	
+	public static void main(String[] args) {
+	
+		List<Employee> listEmp = Arrays.asList( 
+				new Employee(1, "Amit", "IT", 70000), 
+				new Employee(2, "Rahul", "HR", 50000), 
+				new Employee(3, "Priya", "IT", 90000), 
+				new Employee(4, "Neha", "Finance", 80000), 
+				new Employee(5, "Raj", "IT", 60000)
+				);
+		
+	Map<String, Double> map=listEmp.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingDouble(Employee:: getSalary)));
+		
+	System.out.println(map);
+	}
+
+}
