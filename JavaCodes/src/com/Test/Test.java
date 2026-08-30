@@ -14,7 +14,7 @@ public class Test {
 	  public static void main(String[] args) {
 		  
 		 
-		  List<Integer> list = Arrays.asList(10, 50, 20, 80, 30);
+		  System.out.print("Hello Word");
 
 		
 	       
